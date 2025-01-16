@@ -18,26 +18,21 @@
         }
 
         .section {
-            height: 100vh;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            position: relative;
-            display: flex;
-            justify-content: center;
-        }
-        .section {
             background-size: cover; /* Garante que a imagem cubra toda a área */
             background-position: center; /* Centraliza a imagem */
             background-repeat: no-repeat; /* Impede que a imagem se repita */
             background-attachment: fixed; /* Para efeito de parallax */
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px; /* Adiciona padding para espaçamento interno */
         }
-        
 
         /* Primeira seção com escurecimento e sombra */
         .section-1 {
             background-image: url('img/slide4.png');
+            height: 100vh; /* Mantém a primeira seção com altura total da tela */
         }
 
         .section-1::before {
@@ -55,6 +50,7 @@
         /* Segunda seção com imagem e ofuscamento */
         .section-2 {
             background-image: url('img/image.png'); /* Substitua pelo caminho da segunda imagem */
+            min-height: 100vh; /* Altura mínima de 100vh, mas pode crescer conforme o conteúdo */
         }
 
         .section-2::before {
@@ -95,7 +91,86 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Garantir que o background não se mova no celular */
+        /* Estilo da seção de serviços */
+        .servicos {
+            padding: 60px 20px;
+            text-align: center;
+            z-index: 2; /* Garante que o conteúdo fique acima da camada escura */
+            position: relative;
+        }
+
+        .servicos h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .servicos .subtitulo {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+        }
+
+        /* Grid de serviços */
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Estilo dos cards */
+        .card {
+            background: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px); /* Efeito de desfoque no fundo */
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil */
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin: 20px 0 10px;
+            color: white;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            padding: 0 20px;
+            margin-bottom: 20px;
+        }
+
+        .card .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px;
+            background-color: #ff6f61;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .card .btn:hover {
+            background-color: #e65a50;
+        }
+
+        /* Responsividade */
         @media screen and (max-width: 768px) {
             .section {
                 background-attachment: scroll; /* Para dispositivos móveis */
@@ -108,84 +183,28 @@
             .content p {
                 font-size: 1.2rem;
             }
-        }
 
-        .services-banner {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            gap: 20px; /* Espaço entre os serviços */
-            padding: 20px;
-            z-index: 2; /* Garante que o conteúdo fique acima da camada escura */
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto; /* Centraliza o banner na tela */
-        }
-
-        .service {
-            text-align: center;
-            color: white;
-            font-size: 1rem;
-            font-weight: bold;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
-            width: 25%; /* Cada serviço ocupa 25% da largura no desktop */
-            max-width: 200px; /* Limita a largura máxima para manter compacto */
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito hover suave */
-        }
-
-        .service:hover {
-            transform: translateY(-10px); /* Eleva o card ao passar o mouse */
-        }
-
-        .service img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px; /* Cantos arredondados nas imagens */
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-            margin-bottom: 15px;
-            transition: transform 0.3s ease; /* Efeito hover suave */
-        }
-
-        .service:hover img {
-            transform: scale(1.05); /* Aumenta a imagem ao passar o mouse */
-        }
-
-        h3 {
-            font-size: 1.2rem; /* Tamanho ajustado para melhor legibilidade */
-            margin: 0;
-            font-weight: 600;
-        }
-
-        /* Layout responsivo para celular */
-        @media screen and (max-width: 768px) {
-            .services-banner {
-                flex-direction: column; /* Serviços em coluna */
-                align-items: center; /* Centraliza os itens no celular */
-                gap: 30px; /* Espaço maior entre os serviços */
-                padding: 40px 20px; /* Mais padding para melhor espaçamento */
+            .servicos-grid {
+                grid-template-columns: 1fr;
             }
 
-            .service {
-                width: 50%; /* Cada serviço ocupa quase toda a largura */
-                max-width: 250px; /* Limita a largura máxima no celular */
+            .servicos h2 {
+                font-size: 2rem;
             }
 
-            .service img {
-                margin-bottom: 0px; /* Espaço menor entre a imagem e o texto */
-            }
-
-            h3 {
-                font-size: 1rem; /* Tamanho de fonte ajustado para celular */
+            .servicos .subtitulo {
+                font-size: 1rem;
             }
         }
+
         footer {
             background-color: #000000;
             color: white;
             text-align: center;
-            padding: 0px 10px;
+            padding: 20px 10px;
             position: relative;
         }
-    
+
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
@@ -194,75 +213,55 @@
             align-items: center;
             gap: 15px;
         }
-    
-        /* Links do Footer */
-        .footer-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            gap: 20px;
-        }
-    
-        .footer-links li {
-            display: inline;
-        }
-    
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
+
         footer p {
-            font-size: 0.6rem; /* Ajuste o valor conforme necessário */
-        }
-        
-        
-    
-     
-       
-    
-        /* Responsividade para o Footer */
-        @media screen and (max-width: 768px) {
-            .footer-links {
-                flex-direction: column;
-                gap: 10px;
-            }
-    
-            .social-media {
-                margin-top: 10px;
-            }
+            font-size: 0.8rem;
         }
     </style>
 </head>
 <body>
     <div class="section section-1">
         <div class="content">
+            <h1></h1>
+            <p></p>
         </div>
     </div>
 
     <div class="section section-2">
-        <div class="services-banner">
-            <div class="service">
-                <img src="img/design-sombracelha.png" alt="Extensão de Cílios">
+        <section class="servicos">
+            <h2>Nossos Serviços</h2>
+            <p class="subtitulo">Descubra os tratamentos que oferecemos para realçar sua beleza.</p>
+        
+            <div class="servicos-grid">
+              <!-- Card 1: Extensão de Cílios -->
+              <div class="card">
+                <img src="img/cilios.png" alt="Extensão de Cílios">
                 <h3>Extensão de Cílios</h3>
-            </div>
-            <div class="service">
+                <p>Cílios longos e volumosos com técnicas personalizadas.</p>
+                <a href="#" class="btn">Saiba Mais</a>
+              </div>
+        
+              <!-- Card 2: Blindagem -->
+              <div class="card">
+                <img src="img/blindagem.png" alt="Blindagem">
+                <h3>Blindagem</h3>
+                <p>Maquiagem semipermanente para um olhar marcante.</p>
+                <a href="#" class="btn">Saiba Mais</a>
+              </div>
+        
+              <!-- Card 3: Design de Sobrancelhas -->
+              <div class="card">
                 <img src="img/design-sombracelha.png" alt="Design de Sobrancelhas">
                 <h3>Design de Sobrancelhas</h3>
+                <p>Sobrancelhas perfeitas com design profissional.</p>
+                <a href="#" class="btn">Saiba Mais</a>
+              </div>
             </div>
-            <div class="service">
-                <img src="img/design-sombracelha.png" alt="Blindagem de Unhas">
-                <h3>Blindagem de Unhas</h3>
-            </div>
-        </div>
+          </section>
     </div>
     <footer>
         <div class="footer-content">
             <p>&copy; 2025 CibellyLash - Todos os direitos reservados.</p>
-            
-           
         </div>
     </footer>
 </body>
