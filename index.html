@@ -26,8 +26,14 @@
             position: relative;
             display: flex;
             justify-content: center;
-            align-items: center;
         }
+        .section {
+            background-size: cover; /* Garante que a imagem cubra toda a área */
+            background-position: center; /* Centraliza a imagem */
+            background-repeat: no-repeat; /* Impede que a imagem se repita */
+            background-attachment: fixed; /* Para efeito de parallax */
+        }
+        
 
         /* Primeira seção com escurecimento e sombra */
         .section-1 {
@@ -165,7 +171,7 @@
             }
 
             .service img {
-                margin-bottom: 10px; /* Espaço menor entre a imagem e o texto */
+                margin-bottom: 0px; /* Espaço menor entre a imagem e o texto */
             }
 
             h3 {
