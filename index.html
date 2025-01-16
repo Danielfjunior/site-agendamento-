@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="https://r.mobirisesite.com/1090776/assets/images/photo-1576426863848-c21f53c60b19.jpeg" type="image/x-icon">
+    <meta name="description" content="Descubra nossos serviços profissionais de extensão de cílios, design de sobrancelhas e blindagem de unhas. Agende seu horário e realce sua beleza!">
+    <title>CibellyLash</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif; /* Fonte moderna e profissional */
+            color: white;
+        }
+
+        .section {
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Primeira seção com escurecimento e sombra */
+        .section-1 {
+            background-image: url('img/slide4.png');
+        }
+
+        .section-1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 0.9) 100%, rgba(0, 0, 0, 1) 100%);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        /* Segunda seção com imagem e ofuscamento */
+        .section-2 {
+            background-image: url('img/image.png'); /* Substitua pelo caminho da segunda imagem */
+        }
+
+        .section-2::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 0.7) 100%);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .content {
+            text-align: center;
+            z-index: 2; /* Garante que o conteúdo fique acima da camada escura */
+        }
+
+        .content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin: 0;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+            animation: fadeIn 2s ease-in-out; /* Animação de entrada */
+        }
+
+        .content p {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin: 20px 0 0;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+            animation: fadeIn 2.5s ease-in-out; /* Animação de entrada */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Garantir que o background não se mova no celular */
+        @media screen and (max-width: 768px) {
+            .section {
+                background-attachment: scroll; /* Para dispositivos móveis */
+            }
+
+            .content h1 {
+                font-size: 2.5rem;
+            }
+
+            .content p {
+                font-size: 1.2rem;
+            }
+        }
+
+        .services-banner {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px; /* Espaço entre os serviços */
+            padding: 20px;
+            z-index: 2; /* Garante que o conteúdo fique acima da camada escura */
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto; /* Centraliza o banner na tela */
+        }
+
+        .service {
+            text-align: center;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+            width: 25%; /* Cada serviço ocupa 25% da largura no desktop */
+            max-width: 200px; /* Limita a largura máxima para manter compacto */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito hover suave */
+        }
+
+        .service:hover {
+            transform: translateY(-10px); /* Eleva o card ao passar o mouse */
+        }
+
+        .service img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px; /* Cantos arredondados nas imagens */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            margin-bottom: 15px;
+            transition: transform 0.3s ease; /* Efeito hover suave */
+        }
+
+        .service:hover img {
+            transform: scale(1.05); /* Aumenta a imagem ao passar o mouse */
+        }
+
+        h3 {
+            font-size: 1.2rem; /* Tamanho ajustado para melhor legibilidade */
+            margin: 0;
+            font-weight: 600;
+        }
+
+        /* Layout responsivo para celular */
+        @media screen and (max-width: 768px) {
+            .services-banner {
+                flex-direction: column; /* Serviços em coluna */
+                align-items: center; /* Centraliza os itens no celular */
+                gap: 30px; /* Espaço maior entre os serviços */
+                padding: 40px 20px; /* Mais padding para melhor espaçamento */
+            }
+
+            .service {
+                width: 50%; /* Cada serviço ocupa quase toda a largura */
+                max-width: 250px; /* Limita a largura máxima no celular */
+            }
+
+            .service img {
+                margin-bottom: 10px; /* Espaço menor entre a imagem e o texto */
+            }
+
+            h3 {
+                font-size: 1rem; /* Tamanho de fonte ajustado para celular */
+            }
+        }
+        footer {
+            background-color: #000000;
+            color: white;
+            text-align: center;
+            padding: 0px 10px;
+            position: relative;
+        }
+    
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+    
+        /* Links do Footer */
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+    
+        .footer-links li {
+            display: inline;
+        }
+    
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        footer p {
+            font-size: 0.6rem; /* Ajuste o valor conforme necessário */
+        }
+        
+        
+    
+     
+       
+    
+        /* Responsividade para o Footer */
+        @media screen and (max-width: 768px) {
+            .footer-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+    
+            .social-media {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="section section-1">
+        <div class="content">
+        </div>
+    </div>
+
+    <div class="section section-2">
+        <div class="services-banner">
+            <div class="service">
+                <img src="img/design-sombracelha.png" alt="Extensão de Cílios">
+                <h3>Extensão de Cílios</h3>
+            </div>
+            <div class="service">
+                <img src="img/design-sombracelha.png" alt="Design de Sobrancelhas">
+                <h3>Design de Sobrancelhas</h3>
+            </div>
+            <div class="service">
+                <img src="img/design-sombracelha.png" alt="Blindagem de Unhas">
+                <h3>Blindagem de Unhas</h3>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 CibellyLash - Todos os direitos reservados.</p>
+            
+           
+        </div>
+    </footer>
+</body>
+</html>
