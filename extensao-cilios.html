@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrossel de Vídeos em Tela Cheia</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Merienda:wght@300..900&family=Quicksand:wght@300..700&display=swap');
+      </style>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html, body {
+          margin: 0; /* Remove a margem padrão */
+          padding: 0; /* Remove o padding padrão */
+          width: 100%;
+          height: 100%;
+          overflow-x: hidden;
+      }
+      
+
+        .swiper-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        .swiper-slide {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Texto sobre o slide */
+        .slide-text {
+          position: absolute;
+          top: 70%; /* Ajuste o valor conforme necessário */
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          color: white;
+          z-index: 10;
+          font-weight: bold;
+          text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+      }
+      
+
+        .slide-text h1 {
+          font-size: 2em;  /* Ajuste o tamanho conforme necessário */
+          margin-bottom: 10px;
+          letter-spacing: 1px;
+          white-space: nowrap;  /* Evita quebra de linha */
+      }
+
+        .slide-text p {
+            font-size: 1em;
+            opacity: 0.8;
+            animation: pulse 2s infinite alternate;
+        }
+        /* Texto sobre o slide */
+.slide-text {
+  position: absolute;
+  top: 90%;  /* Mudei para 70% para mover mais para baixo */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 10;
+  font-weight: bold;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+
+        /* Animação do texto */
+        @keyframes pulse {
+            0% { transform: translateY(0); opacity: 0.8; }
+            100% { transform: translateY(5px); opacity: 1; }
+        }
+
+        /* Seção abaixo com imagem */
+        .content {
+            width: 100%;
+            min-height: 100vh;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+            text-align: center;
+            margin-top: 0;
+            padding-top: 20px;
+        }
+
+        .content picture, .content img {
+          margin: 0;
+          padding: 0;
+          display: block; /* Isso vai evitar espaçamento extra causado pelo inline-block */
+          width: 100%;
+      }
+      
+        .content h2 {
+          font-family: "Quicksand", serif;
+
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .content p {
+            font-size: 1.2em;
+            margin-top: 20px;
+            color: #666;
+            max-width: 800px;
+        }
+
+        .content picture {
+            width: 100%;
+            max-width: 1050px;
+        }
+
+        .content img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .no-numbering {
+          list-style-type: none;  /* Remove a numeração */
+          padding-left: 0;        /* Remove o recuo à esquerda */
+        }
+
+        /* Botões em cima */
+.botaoagendar {
+  position: absolute;
+  top: 50%; /* Centraliza verticalmente no slide */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centraliza horizontalmente */
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Espaçamento entre os botões */
+  z-index: 15; /* Garante que os botões fiquem acima de outros elementos */
+  opacity: 0; /* Inicialmente invisível */
+  animation: subir 1s forwards; /* Aplica a animação */
+  animation-delay: 0.5s; /* Delay antes de iniciar a animação */
+}
+
+/* Definindo a animação de subida */
+@keyframes subir {
+  0% {
+    transform: translate(-50%, -100%); /* Começa fora da tela, acima */
+    opacity: 0; /* Invisível */
+  }
+  100% {
+    transform: translate(-50%, -50%); /* Posição final, centralizada */
+    opacity: 1; /* Torna-se visível */
+  }
+}
+
+.btn-agendar {
+  display: inline-block;
+  padding: 10px 20px; /* Reduziu o padding para deixar o botão menor */
+  background-color: transparent;
+  color: white;
+  font-size: 1em; /* Reduziu o tamanho da fonte */
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 25px;
+  border: 2px solid white; /* Contorno branco */
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, border-color 0.3s;
+  white-space: nowrap; /* Impede que o texto quebre */
+}
+
+/* Efeito de hover para os botões */
+.btn-agendar:hover {
+  background-color: rgba(255, 255, 255, 0.3); /* Fundo claro ao passar o mouse */
+  transform: scale(1.05); /* Reduziu o tamanho do efeito de hover */
+  border-color: rgba(255, 255, 255, 0.6); /* Altera a cor do contorno no hover */
+}
+
+/* Estilos específicos para o botão "Agendar Manutenção" */
+.manutencao {
+  background-color: transparent;
+  border: 2px solid white; /* Contorno branco para "Agendar Manutenção" */
+}
+ /* Reset básico */
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container das imagens */
+.imagens-cantos {
+  display: flex;
+  flex-direction: column; /* Alinha as imagens verticalmente */
+  gap: 20px; /* Espaçamento entre as imagens */
+  padding: 20px; /* Espaçamento interno */
+}
+
+/* Estilo base para as imagens */
+.img-canto {
+  max-width: 200px; /* Ajuste o tamanho das imagens */
+  height: auto;
+  opacity: 0; /* Inicialmente invisível */
+  transform: translateY(20px); /* Desloca as imagens para baixo */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transição suave */
+}
+
+/* Classe para mostrar as imagens */
+.img-canto.fade-in {
+  opacity: 1; /* Torna a imagem visível */
+  transform: translateY(0); /* Retorna a imagem à posição original */
+}
+
+
+/* Posicionamento alternado */
+.img1 {
+  align-self: flex-start; /* Direita */
+}
+
+.img2 {
+  align-self: flex-end; /* Esquerda */
+}
+
+.img3 {
+  align-self: flex-start; /* Direita */
+}
+
+.img4 {
+  align-self: flex-end; /* Esquerda */
+}
+
+.img5 {
+  align-self: center; 
+}
+
+h3 {
+  color: #ff69b4; /* Cor rosa */
+  font-family: 'Arial', sans-serif; /* Fonte */
+  font-size: 24px; /* Tamanho da fonte */
+  font-weight: bold; /* Negrito */
+  text-align: center; /* Centralizar texto */
+  margin: 20px 0; /* Espaçamento externo */
+  padding: 10px; /* Espaçamento interno */
+  background-color: #fff0f5; /* Fundo rosa claro */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  display: inline-block; /* Ajusta o tamanho ao conteúdo */
+}
+        
+/* Logo no topo */
+.logo {
+  position: absolute;
+  top: 10px; /* Ajuste a posição vertical */
+  left: 10%;
+  transform: translateX(-50%); /* Centraliza horizontalmente */
+  z-index: 20; /* Garante que a logo fique sobre o carrossel */
+}
+
+.logo img {
+  max-width: 100px; /* Ajuste o tamanho conforme necessário */
+  height: auto;
+}
+
+    </style>
+</head>
+<body>
+
+<div class="swiper-container">
+<!-- Logo no topo -->
+<div class="logo">
+  <img src="img/logo.png.png" alt="Logo">
+</div>
+  <!-- Botões em cima -->
+  <div class="botaoagendar">
+    <a href="#agendar" class="btn-agendar">Agendar </a>
+    <a href="#manutencao" class="btn-agendar manutencao">Agendar Man.</a>
+</div>
+
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <video autoplay loop muted>
+                <source src="img/slide1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="swiper-slide">
+            <video autoplay loop muted>
+                <source src="img/slide2.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="swiper-slide">
+            <video autoplay loop muted>
+                <source src="img/slide3.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+      
+
+     <!-- Texto sobre os vídeos -->
+     <div class="slide-text">
+      
+      
+      <h1>Técnicas Gringas</h1>
+      <p>Role a tela para saber mais</p><br>
+      <!-- Setinha flutuante -->
+      <span class="arrow">&#8595;</span>
+  </div>
+</div>
+
+<!-- Seção com imagem e textos -->
+<div class="content">
+    <h2>Descubra a técnica perfeita para o seu olhar</h2>
+    
+    <picture>
+        <source media="(max-width: 750px)" srcset="img/teste2.jpg">
+        <source media="(max-width: 1050px)" srcset="img/teste2.jpg">
+        <img src="img/teste2.jpg" alt="Imagens flexíveis">
+    </picture>
+    <br><h2>O Melhor das Tendências Internacionais para Você</h2> 
+
+    <ol class="no-numbering">
+      <li>As técnicas gringas se tornaram referência no mercado de beleza, trazendo inovações e resultados de alto padrão.</li><br>
+      <li>Cada técnica é pensada para atender diferentes estilos e tipos de cílios, proporcionando resultados mais volumosos ou mais naturais, tudo com muita precisão e cuidado.</li>
+      <br><hr>
+    
+    </ol>
+
+    
+<br><h3>Passo a passo para um atendimento perfeito</h3> 
+</div>
+<div class="imagens-cantos">
+  <img src="img/img1.png.png" class="img-canto img1">
+  <img src="img/img2.png.png" class="img-canto img2">
+  <img src="img/img3.png.png" class="img-canto img3">
+  <img src="img/img4.png.png" class="img-canto img4">
+  <img src="img/img5.png.png" class="img-canto img5">
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".swiper-container", {
+        loop: true,
+        effect: "fade",
+        speed: 2000,
+        fadeEffect: { crossFade: true },
+        autoplay: { 
+            delay: 7000,
+            disableOnInteraction: false 
+        }
+    });
+
+     // Função para observar as imagens
+     const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add('fade-in'); // Adiciona a classe quando a imagem está visível
+          }
+      });
+  }, {
+      threshold: 0.5 // Define que 50% da imagem deve estar visível para disparar o efeito
+  });
+
+  // Seleciona todas as imagens e observa cada uma
+  const imagens = document.querySelectorAll('.img-canto');
+  imagens.forEach(img => {
+      observer.observe(img);
+  });
+</script>
+
+</body>
+</html>
