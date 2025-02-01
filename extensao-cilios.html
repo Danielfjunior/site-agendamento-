@@ -296,17 +296,17 @@ h3 {
     <div class="swiper-wrapper">
       <div class="swiper-slide">
         <video autoplay loop muted playsinline>
-          <source src="img/slide1.mp4" type="video/mp4">
+          <source src="videos/slide1.mp4" type="video/mp4">
         </video>
       </div>
       <div class="swiper-slide">
         <video autoplay loop muted playsinline>
-          <source src="img/slide2.mp4" type="video/mp4">
+          <source src="videos/slide2.mp4" type="video/mp4">
         </video>
       </div>
       <div class="swiper-slide">
         <video autoplay loop muted playsinline>
-          <source src="img/slide3.mp4" type="video/mp4">
+          <source src="videos/slide3.mp4" type="video/mp4">
         </video>
       </div>
     </div>
@@ -385,6 +385,19 @@ h3 {
     document.querySelectorAll(".swiper-slide video").forEach(video => {
         video.play().catch(error => console.log("Autoplay bloqueado:", error));
     });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".swiper-slide video").forEach(video => {
+      video.play().catch(error => {
+          console.log("Autoplay bloqueado. Tentando novamente ao interagir.");
+          
+          // Iniciar o vídeo ao primeiro toque do usuário
+          document.addEventListener("click", () => {
+              video.play();
+          }, { once: true });
+      });
+  });
 });
 
 </script>
