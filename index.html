@@ -3,122 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <link rel="shortcut icon" href="https://r.mobirisesite.com/1090776/assets/images/photo-1576426863848-c21f53c60b19.jpeg" type="image/x-icon">
-    <meta name="description" content="Descubra nossos serviços profissionais de extensão de cílios, design de sobrancelhas e blindagem de unhas. Agende seu horário e realce sua beleza!">
-    <title>CibellyLash</title>
-    <link rel="stylesheet" href="style.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CibellyLash - Beleza e Estética</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
     <style>
-        body {
+        /* Reset básico */
+        body, h1, h2, h3, p, ul, li {
             margin: 0;
             padding: 0;
-            font-family: 'Poppins', sans-serif; /* Fonte moderna e profissional */
-            color: white;
+            box-sizing: border-box;
         }
 
-        .section {
-            background-size: cover; /* Garante que a imagem cubra toda a área */
-            background-position: center; /* Centraliza a imagem */
-            background-repeat: no-repeat; /* Impede que a imagem se repita */
-            background-attachment: fixed; /* Para efeito de parallax */
-            position: relative;
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+
+        /* Header */
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 10px 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ff6f61;
+        }
+
+        .cta-button {
+            background: #ff6f61;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #e65a50;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('img/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 60px 20px; /* Adiciona padding para espaçamento interno */
+            text-align: center;
+            color: white;
+            position: relative;
         }
 
-        /* Primeira seção com escurecimento e sombra */
-        .section-1 {
-            background-image: url('img/slide4.png');
-            height: 100vh; /* Mantém a primeira seção com altura total da tela */
-        }
-
-   
-
-        /* Segunda seção com imagem e ofuscamento */
-        .section-2 {
-            background-image: url('img/image.png'); /* Substitua pelo caminho da segunda imagem */
-            min-height: 100vh; /* Altura mínima de 100vh, mas pode crescer conforme o conteúdo */
-        }
-
-        .section-2::before {
+        .hero::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 0.7) 100%);
-            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
-            z-index: 1;
+            background: rgba(0, 0, 0, 0.5);
         }
 
-        .content {
-            text-align: center;
-            z-index: 2; /* Garante que o conteúdo fique acima da camada escura */
+        .hero-content {
+            z-index: 2;
         }
 
-        .content h1 {
+        .hero h1 {
             font-size: 3.5rem;
-            font-weight: 700;
-            margin: 0;
-            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
-            animation: fadeIn 2s ease-in-out; /* Animação de entrada */
+            margin-bottom: 20px;
         }
 
-        .content p {
-            font-size: 1.5rem;
-            font-weight: 300;
-            margin: 20px 0 0;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
-            animation: fadeIn 2.5s ease-in-out; /* Animação de entrada */
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .hero .cta-button {
+            font-size: 1.1rem;
         }
 
-        /* Estilo da seção de serviços */
+        /* Sobre Nós */
+        .sobre {
+            display: flex;
+            align-items: center;
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 40px;
+        }
+
+        .sobre img {
+            width: 50%;
+            border-radius: 10px;
+        }
+
+        .sobre-content {
+            width: 50%;
+        }
+
+        .sobre h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .sobre p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        /* Serviços */
         .servicos {
-            padding: 60px 20px;
+            background: #fff;
+            padding: 80px 20px;
             text-align: center;
-            z-index: 2; /* Garante que o conteúdo fique acima da camada escura */
-            position: relative;
         }
 
         .servicos h2 {
             font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: white;
-        }
-
-        .servicos .subtitulo {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.8);
             margin-bottom: 40px;
         }
 
-        /* Grid de serviços */
         .servicos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        /* Estilo dos cards */
         .card {
-            background: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
+            background: #fff;
             border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            backdrop-filter: blur(10px); /* Efeito de desfoque no fundo */
-            border: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil */
         }
 
         .card:hover {
@@ -127,72 +175,95 @@
         }
 
         .card img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
+            width: 30px;
+            margin-bottom: 20px;
         }
 
         .card h3 {
             font-size: 1.5rem;
-            margin: 20px 0 10px;
-            color: white;
+            margin-bottom: 10px;
         }
 
         .card p {
             font-size: 1rem;
-            color: rgba(255, 255, 255, 0.8);
-            padding: 0 20px;
+            color: #666;
+        }
+
+        /* Depoimentos */
+        .depoimentos {
+            background: #f9f9f9;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .depoimentos h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .carrossel {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .carrossel p {
+            font-size: 1.1rem;
+            color: #666;
             margin-bottom: 20px;
         }
 
-        .card .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 20px;
-            background-color: #ff6f61;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+        .carrossel span {
+            font-weight: 600;
+            color: #333;
         }
 
-        .card .btn:hover {
-            background-color: #e65a50;
-        }
-
-        /* Responsividade */
-        @media screen and (max-width: 768px) {
-            .section {
-                background-attachment: scroll; /* Para dispositivos móveis */
-            }
-
-            .content h1 {
-                font-size: 2.5rem;
-            }
-
-            .content p {
-                font-size: 1.2rem;
-            }
-
-            .servicos-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .servicos h2 {
-                font-size: 2rem;
-            }
-
-            .servicos .subtitulo {
-                font-size: 1rem;
-            }
-        }
-
-        footer {
-            background-color: #000000;
-            color: white;
+        /* Contato */
+        .contato {
+            padding: 80px 20px;
             text-align: center;
-            padding: 20px 10px;
-            position: relative;
+        }
+
+        .contato h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .form-contato {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-contato input, .form-contato textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-contato button {
+            background: #ff6f61;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .form-contato button:hover {
+            background: #e65a50;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
         }
 
         .footer-content {
@@ -200,68 +271,286 @@
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 15px;
+            gap: 20px;
         }
 
         footer p {
-            font-size: 0.8rem;
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ff6f61;
         }
     </style>
 </head>
 <body>
-    <div class="section section-1">
-        <div class="content">
-            <h1></h1>
-            <p></p>
-        </div>
-    </div>
-
-    <div class="section section-2">
-        <section class="servicos">
-            <h2>Procedimentos</h2>
-            <p class="subtitulo">Cada Serviço, uma experiência única para realçar o que há de mais belo em você.</p>
-        
-            <div class="servicos-grid">
-                <!-- Card 1: Extensão de Cílios -->
-                <div class="card">
-                  <a href="extensao-cilios.html">
-                    <img src="img/Home.png" alt="Extensão de Cílios">
-                  </a>
-                </div>
-              
-                <!-- Card 3: Design de Sobrancelhas -->
-                <div class="card">
-                  <a href="pagina-design-sobrancelhas.html">
-                    <img src="img/design-sombracelha.png" alt="Design de Sobrancelhas">
-                  </a>
-                </div>
-              
-                <!-- Card 2: Blindagem -->
-                <div class="card">
-                  <a href="pagina-blindagem.html">
-                    <img src="img/blindagem.png" alt="Blindagem">
-                  </a>
-                </div>
-              
-                <!-- Card 4: Limpeza de Pele -->
-                <div class="card">
-                  <a href="pagina-limpeza-pele.html">
-                    <img src="img/Alingem.png" alt="Limpeza de Pele">
-                  </a>
-              
-                
-              </div>
-              <p class="subtitulo">A confiança no nosso trabalho é refletida em cada detalhe, proporcionado tratamentos que respeitam sua beleza e saúde.</p>
-
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">CibellyLash</div>
+            
+            <!-- Ícone do menu hambúrguer -->
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
-          </section>
-          
-    </div>
+            <!-- Menu de navegação -->
+            <ul class="nav-list">
+                <li><a href="#hero">Início</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
     
+    <style>
+        /* Estilos do Header */
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 10px 20px;
+        }
+    
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+    
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+    
+        .nav-list li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+    
+        .nav-list li a:hover {
+            color: #ff6f61;
+        }
+    
+        /* Menu Hambúrguer (para telas menores) */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+    
+        .menu-toggle .bar {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 4px 0;
+            transition: all 0.3s ease;
+        }
+    
+        /* Responsividade */
+        @media screen and (max-width: 768px) {
+            .nav-list {
+                position: absolute;
+                top: 60px; /* Ajuste conforme a altura do header */
+                right: 0;
+                background: rgba(0, 0, 0, 0.8);
+                backdrop-filter: blur(10px);
+                width: 100%;
+                height: 100vh;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+            }
+    
+            .nav-list.active {
+                transform: translateX(0);
+            }
+    
+            .menu-toggle {
+                display: flex;
+            }
+    
+            .menu-toggle.active .bar:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+    
+            .menu-toggle.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+    
+            .menu-toggle.active .bar:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+        }
+    </style>
+    
+    <script>
+        // Script para alternar o menu hambúrguer
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.querySelector('.nav-list');
+    
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            navList.classList.toggle('active');
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+        </div>
+    </section>
+    
+    <style>
+        /* Estilos da Hero Section */
+        .hero {
+            background-image: url('img/slide4.png'); /* Substitua pelo caminho da sua imagem */
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Altura total da tela */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+    
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Camada escura sobre a imagem */
+        }
+    
+        .hero-content {
+            z-index: 2; /* Garante que o conteúdo fique acima da camada escura */
+        }
+    
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8); /* Sombra para melhorar a legibilidade */
+        }
+    
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para melhorar a legibilidade */
+        }
+    
+        .cta-button {
+            background: #ff6f61;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: background 0.3s ease;
+        }
+    
+        .cta-button:hover {
+            background: #e65a50;
+        }
+    
+        /* Responsividade */
+        @media screen and (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+    
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+    
+        @media screen and (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+    
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+
+ 
+
+    <!-- Serviços -->
+    <section class="servicos" id="servicos">
+        <h2>Nossos Serviços</h2>
+        <div class="servicos-grid">
+            <!-- Card 1 -->
+            <div class="card">
+                <h3>Extensão de Cílios</h3>
+            </div>
+            <!-- Card 2 -->
+            <div class="card">
+                <h3>Design de Sobrancelhas</h3>
+            </div>
+            <!-- Card 3 -->
+            <div class="card">
+                <h3>Unhas</h3>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <!-- Contato -->
+    <section class="contato" id="contato">
+        <h2>Entre em Contato</h2>
+        <form class="form-contato">
+            <input type="text" placeholder="Seu Nome" required>
+            <input type="email" placeholder="Seu E-mail" required>
+            <textarea placeholder="Sua Mensagem" rows="5" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <p>&copy; 2025 CibellyLash - Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">WhatsApp</a>
+            </div>
+            <p>&copy; 2025 CibellyLash. Todos os direitos reservados.</p>
         </div>
     </footer>
 </body>
