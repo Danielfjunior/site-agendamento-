@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrossel de Vídeos em Tela Cheia</title>
+    <title>Design de Sobrancelhas</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,11 +17,11 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Quicksand', sans-serif;
         }
 
         html, body {
-            background-color: #ffffff;
+            background-color: #f9f9f9;
             margin: 0;
             padding: 0;
             width: 100%;
@@ -38,17 +38,22 @@
         .swiper-slide {
             width: 100%;
             height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #000;
         }
 
-        .swiper-slide video {
+        .swiper-slide img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            opacity: 0.7;
         }
 
         .slide-text {
             position: absolute;
-            top: 70%;
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
@@ -59,14 +64,14 @@
         }
 
         .slide-text h1 {
-            font-size: 2em;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-            white-space: nowrap;
+            font-size: 3em;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            font-family: 'Cinzel', serif;
         }
 
         .slide-text p {
-            font-size: 1em;
+            font-size: 1.2em;
             opacity: 0.8;
             animation: pulse 2s infinite alternate;
         }
@@ -86,20 +91,11 @@
             justify-content: center;
             padding: 50px 20px;
             text-align: center;
-            margin-top: 0;
-            padding-top: 20px;
-        }
-
-        .content picture, .content img {
-            margin: 0;
-            padding: 0;
-            display: block;
-            width: 100%;
         }
 
         .content h2 {
-            font-family: "Quicksand", serif;
-            font-size: 1.1em;
+            font-family: "Cinzel", serif;
+            font-size: 2.5em;
             margin-bottom: 20px;
             color: #333;
         }
@@ -111,110 +107,54 @@
             max-width: 800px;
         }
 
-        .content picture {
-            width: 100%;
-            max-width: 1050px;
-        }
-
         .content img {
             width: 100%;
+            max-width: 600px;
             height: auto;
-            object-fit: cover;
-        }
-
-        .no-numbering {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        .botaoagendar {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            z-index: 15;
-            opacity: 0;
-            animation: subir 1s forwards;
-            animation-delay: 0.5s;
-        }
-
-        @keyframes subir {
-            0% { transform: translate(-50%, -100%); opacity: 0; }
-            100% { transform: translate(-50%, -50%); opacity: 1; }
-        }
-
-        .btn-agendar {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: transparent;
-            color: white;
-            font-size: 1em;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 25px;
-            border: 2px solid white;
-            text-align: center;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s, border-color 0.3s;
-            white-space: nowrap;
-        }
-
-        .btn-agendar:hover {
-            background-color: rgba(255, 255, 255, 0.3);
-            transform: scale(1.05);
-            border-color: rgba(255, 255, 255, 0.6);
-        }
-
-        .manutencao {
-            background-color: transparent;
-            border: 2px solid white;
-        }
-
-        .imagens-cantos {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .img-canto {
-            max-width: 270px;
-            height: auto;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        .img-canto.fade-in {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .img1 { align-self: flex-start; }
-        .img2 { align-self: flex-end; }
-        .img3 { align-self: flex-start; }
-        .img4 { align-self: flex-end; }
-        .img5 { align-self: center; }
-
-        h3 {
-            color: #ff69b4;
-            font-family: 'Arial', sans-serif;
-            font-size: 24px;
-            font-weight: bold;
-            text-align: center;
             margin: 20px 0;
-            padding: 10px;
             border-radius: 10px;
-            display: inline-block;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .depoimentos {
+            width: 100%;
+            padding: 50px 20px;
+            background: #f4f4f4;
+            text-align: center;
+        }
+
+        .depoimentos h2 {
+            font-family: "Cinzel", serif;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .depoimentos .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            margin: 0 auto 20px;
+        }
+
+        .depoimentos .card p {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .depoimentos .card span {
+            font-size: 0.9em;
+            color: #888;
+            font-style: italic;
         }
 
         footer {
-            background: #000000;
+            background: #000;
             color: white;
-            padding: 10px 20px;
+            padding: 20px;
             text-align: center;
         }
 
@@ -223,7 +163,7 @@
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 10px;
         }
 
         .logo {
@@ -320,20 +260,21 @@
                 display: flex;
             }
         }
+        
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">Cibelly Lash</div>
+            <a href="index.html"><div class="logo">Cibelly Lash</div> </a>
             <div class="menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
             <ul class="nav-list" id="nav-list">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="index.html">Serviços</a></li>
+                <li><a href="#hero">Início</a></li>
+                <li><a href="#servicos">Serviços</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
@@ -342,49 +283,47 @@
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <video autoplay muted loop playsinline>
-                    <source src="videos/slide1.mp4" type="video/mp4">
-                </video>
+                <img src="img/design-sombracelha.png" alt="Design de Sobrancelhas 1">
+                <div class="slide-text">
+                    <h1>Design de Sobrancelhas</h1>
+                    <p>Realce sua beleza natural</p>
+                </div>
             </div>
             <div class="swiper-slide">
-                <video autoplay muted loop playsinline>
-                    <source src="videos/slide2.mp4" type="video/mp4">
-                </video>
+                <img src="img/sobrancelha2.jpg" alt="Design de Sobrancelhas 2">
+                <div class="slide-text">
+                    <h1>Precisão e Harmonia</h1>
+                    <p>Resultados que encantam</p>
+                </div>
             </div>
             <div class="swiper-slide">
-                <video autoplay muted loop playsinline>
-                    <source src="videos/slide3.mp4" type="video/mp4">
-                </video>
+                <img src="img/sobrancelha3.jpg" alt="Design de Sobrancelhas 3">
+                <div class="slide-text">
+                    <h1>Agende já!</h1>
+                    <p>Transforme seu olhar</p>
+                </div>
             </div>
-        </div>
-        <div class="slide-text">
-            <h1>Técnicas Gringas</h1>
-            <p>Role a tela para saber mais</p><br>
-            <span class="arrow">&#8595;</span>
         </div>
     </div>
 
     <div class="content">
-        <h2>Descubra a técnica perfeita para o seu olhar</h2>
-        <picture>
-            <source media="(max-width: 750px)" srcset="img/Product Catalog Booklet.zip - 1 2.png">
-            <source media="(max-width: 1050px)" srcset="img/Product Catalog Booklet.zip - 1 2.png">
-            <img src="img/Product Catalog Booklet.zip - 1 2.png" alt="Imagens flexíveis">
-        </picture>
-        <br><h2>O Melhor das Tendências Internacionais para Você</h2>
-        <ol class="no-numbering">
-            <li>As técnicas gringas se tornaram referência no mercado de beleza, trazendo inovações e resultados de alto padrão.</li><br>
-            <li>Cada técnica é pensada para atender diferentes estilos e tipos de cílios, proporcionando resultados mais volumosos ou mais naturais, tudo com muita precisão e cuidado.</li>
-            <br><hr>
-        </ol>
-        <br><h3>Passo a passo para um atendimento perfeito</h3>
+        <h2>O que é Design de Sobrancelhas?</h2>
+        <p>
+            O design de sobrancelhas é uma técnica que visa criar um formato personalizado para realçar a beleza natural do seu rosto. Com precisão e cuidado, garantimos um resultado harmonioso e elegante.
+        </p>
+        <img src="img/sombracelha.png" alt="Design de Sobrancelhas">
     </div>
-    <div class="imagens-cantos">
-        <img src="img/img1.png.png" class="img-canto img1">
-        <img src="img/img2.png" class="img-canto img2">
-        <img src="img/img3.png" class="img-canto img3">
-        <img src="img/img4.png" class="img-canto img4">
-        <img src="img/5-removebg-preview.png" class="img-canto img5">
+
+    <div class="depoimentos">
+        <h2>Depoimentos</h2>
+        <div class="card">
+            <p>"Adorei o resultado! Minhas sobrancelhas ficaram perfeitas."</p>
+            <span>- Maria Silva</span>
+        </div>
+        <div class="card">
+            <p>"Profissional incrível e muito atenciosa. Recomendo!"</p>
+            <span>- João Santos</span>
+        </div>
     </div>
 
     <footer>
@@ -422,32 +361,6 @@
             link.addEventListener('click', () => {
                 mobileMenu.classList.remove('active');
                 navList.classList.remove('active');
-            });
-        });
-
-        // Observador de imagens
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, { threshold: 0.5 });
-
-        const imagens = document.querySelectorAll('.img-canto');
-        imagens.forEach(img => {
-            observer.observe(img);
-        });
-
-        // Autoplay de vídeos
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelectorAll(".swiper-slide video").forEach(video => {
-                video.play().catch(error => {
-                    console.log("Autoplay bloqueado. Tentando novamente ao interagir.");
-                    document.addEventListener("click", () => {
-                        video.play();
-                    }, { once: true });
-                });
             });
         });
     </script>

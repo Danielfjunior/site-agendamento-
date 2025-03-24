@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CibellyLash - Beleza e Estética</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Poiret+One&display=swap" rel="stylesheet">
+   
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Poiret+One&display=swap');
+        </style>
     <style>
         /* Reset básico */
         body, h1, h2, h3, p, ul, li {
@@ -21,55 +28,10 @@
             background-color: #f9f9f9;
         }
 
-        /* Header */
-        header {
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            padding: 10px 20px;
-        }
+ 
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: #ff6f61;
-        }
-
-        .cta-button {
-            background: #ff6f61;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background: #e65a50;
-        }
-
+ 
         /* Hero Section */
         .hero {
             background-image: url('img/hero-bg.jpg');
@@ -84,62 +46,8 @@
             position: relative;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-        }
 
-        .hero-content {
-            z-index: 2;
-        }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
-
-        .hero .cta-button {
-            font-size: 1.1rem;
-        }
-
-        /* Sobre Nós */
-        .sobre {
-            display: flex;
-            align-items: center;
-            padding: 80px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            gap: 40px;
-        }
-
-        .sobre img {
-            width: 50%;
-            border-radius: 10px;
-        }
-
-        .sobre-content {
-            width: 50%;
-        }
-
-        .sobre h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .sobre p {
-            font-size: 1.1rem;
-            color: #666;
-        }
 
         /* Serviços */
         .servicos {
@@ -189,80 +97,13 @@
             color: #666;
         }
 
-        /* Depoimentos */
-        .depoimentos {
-            background: #f9f9f9;
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .depoimentos h2 {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-        }
-
-        .carrossel {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .carrossel p {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .carrossel span {
-            font-weight: 600;
-            color: #333;
-        }
-
-        /* Contato */
-        .contato {
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .contato h2 {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-        }
-
-        .form-contato {
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .form-contato input, .form-contato textarea {
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .form-contato button {
-            background: #ff6f61;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .form-contato button:hover {
-            background: #e65a50;
-        }
+        
 
         /* Footer */
         footer {
-            background: #333;
+            background: #000000;
             color: white;
-            padding: 40px 20px;
+            padding: 5px 20px;
             text-align: center;
         }
 
@@ -291,17 +132,16 @@
             transition: color 0.3s ease;
         }
 
-        .social-links a:hover {
-            color: #ff6f61;
-        }
+       
     </style>
 </head>
+
 <body>
-    <!-- Header -->
+    
     <header>
+        
         <nav>
-            <div class="logo">CibellyLash</div>
-            
+            <div class="logo">Cibelly Lash</div>
             <!-- Ícone do menu hambúrguer -->
             <div class="menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
@@ -309,125 +149,163 @@
                 <span class="bar"></span>
             </div>
             <!-- Menu de navegação -->
-            <ul class="nav-list">
+            <ul class="nav-list" id="nav-list">
                 <li><a href="#hero">Início</a></li>
                 <li><a href="#servicos">Serviços</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
+        
     </header>
+    
     
     <style>
         /* Estilos do Header */
-        header {
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            padding: 10px 20px;
-        }
-    
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-    
-        .logo {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-    
+    header {
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(10px);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px 20px;
+    }
+
+    .logo {
+        font-family: "Poiret One", sans-serif;
+     
+        font-size: 2.5rem; /* Tamanho maior para destacar */
+        color: white; /* Cor da logo */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra para efeito */
+    }
+
+    .nav-list {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+
+    .nav-list li a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+    .nav-list li a:hover {
+        color: #ff6f61;
+    }
+
+    /* Menu Hambúrguer (para telas menores) */
+    .menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        z-index: 1001;
+        padding: 10px; /* Adiciona um padding ao ícone */
+    }
+
+    .menu-toggle .bar {
+        width: 25px;
+        height: 3px;
+        background: white;
+        margin: 4px 0;
+        transition: all 0.3s ease;
+    }
+
+    /* Responsividade */
+    @media screen and (max-width: 768px) {
         .nav-list {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-    
-        .nav-list li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-    
-        .nav-list li a:hover {
-            color: #ff6f61;
-        }
-    
-        /* Menu Hambúrguer (para telas menores) */
-        .menu-toggle {
-            display: none;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            width: 100%;
+            height: 100vh;
             flex-direction: column;
-            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            transition: right 0.3s ease-in-out;
+            z-index: 1000;
         }
-    
-        .menu-toggle .bar {
-            width: 25px;
-            height: 3px;
-            background: white;
-            margin: 4px 0;
-            transition: all 0.3s ease;
+
+        .nav-list.active {
+            right: 0;
         }
-    
-        /* Responsividade */
-        @media screen and (max-width: 768px) {
-            .nav-list {
-                position: absolute;
-                top: 60px; /* Ajuste conforme a altura do header */
-                right: 0;
-                background: rgba(0, 0, 0, 0.8);
-                backdrop-filter: blur(10px);
-                width: 100%;
-                height: 100vh;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                transform: translateX(100%);
-                transition: transform 0.3s ease-in-out;
-            }
-    
-            .nav-list.active {
-                transform: translateX(0);
-            }
-    
-            .menu-toggle {
-                display: flex;
-            }
-    
-            .menu-toggle.active .bar:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
-            }
-    
-            .menu-toggle.active .bar:nth-child(2) {
-                opacity: 0;
-            }
-    
-            .menu-toggle.active .bar:nth-child(3) {
-                transform: rotate(-45deg) translate(5px, -5px);
-            }
+
+        .menu-toggle {
+            display: flex;
         }
+
+        .menu-toggle.active .bar:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active .bar:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .nav-list li {
+            margin: 20px 0;
+        }
+
+        .nav-list li a {
+            font-size: 1.5rem;
+        }
+
+        .logo {
+            font-size: 1.7rem;
+        }
+
+        .menu-toggle {
+            margin-left: auto;
+        }
+    }
     </style>
     
     <script>
-        // Script para alternar o menu hambúrguer
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navList = document.querySelector('.nav-list');
-    
-        mobileMenu.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-            navList.classList.toggle('active');
+      // Script para alternar o menu hambúrguer
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navList = document.getElementById('nav-list');
+
+    // Função para fechar o menu
+    const closeMenu = () => {
+        mobileMenu.classList.remove('active');
+        navList.classList.remove('active');
+    };
+
+    // Evento de clique no ícone do menu
+    mobileMenu.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+        navList.classList.toggle('active');
+    });
+
+    // Evento de clique nos links do menu
+    const navLinks = document.querySelectorAll('.nav-list li a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            closeMenu(); // Fecha o menu ao clicar em um link
         });
+    });
     </script>
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
         <div class="hero-content">
+
         </div>
     </section>
     
@@ -453,7 +331,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5); /* Camada escura sobre a imagem */
+            background: rgba(0, 0, 0, 0.0); /* Camada escura sobre a imagem */
         }
     
         .hero-content {
@@ -476,10 +354,12 @@
             background: #ff6f61;
             color: white;
             padding: 10px 20px;
-            border-radius: 5px;
+            border-radius: 15px;
             text-decoration: none;
             font-size: 1.1rem;
             transition: background 0.3s ease;
+            margin-top: 40px; /* Adiciona um espaço acima do botão */
+
         }
     
         .cta-button:hover {
@@ -506,6 +386,11 @@
                 font-size: 1rem;
             }
         }
+        /* Remove o sublinhado do link da extensão de cílios */
+.card a {
+    text-decoration: none; /* Remove o sublinhado */
+    color: inherit; /* Mantém a cor do texto do card */
+}
     </style>
 
  
@@ -516,11 +401,12 @@
         <div class="servicos-grid">
             <!-- Card 1 -->
             <div class="card">
-                <h3>Extensão de Cílios</h3>
+                
+                <a href="extensao-cilios.html"><h3>Extensão de Cílios</h3></a>
             </div>
             <!-- Card 2 -->
             <div class="card">
-                <h3>Design de Sobrancelhas</h3>
+                <a href=""><h3>Design de Sobrancelhas</h3></a>
             </div>
             <!-- Card 3 -->
             <div class="card">
@@ -531,24 +417,13 @@
 
    
 
-    <!-- Contato -->
-    <section class="contato" id="contato">
-        <h2>Entre em Contato</h2>
-        <form class="form-contato">
-            <input type="text" placeholder="Seu Nome" required>
-            <input type="email" placeholder="Seu E-mail" required>
-            <textarea placeholder="Sua Mensagem" rows="5" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
-
+   
     <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="social-links">
-                <a href="#">Instagram</a>
-                <a href="#">Facebook</a>
-                <a href="#">WhatsApp</a>
+                <a href="https://www.instagram.com/cibellylash_/">Instagram</a>
+                <a href="https://wa.me/5543999326237">WhatsApp</a>
             </div>
             <p>&copy; 2025 CibellyLash. Todos os direitos reservados.</p>
         </div>
