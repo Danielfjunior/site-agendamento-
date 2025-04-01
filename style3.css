@@ -1,0 +1,195 @@
+    /* Estilos do Header */
+    header {
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(10px);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px 20px;
+    }
+
+    .logo {
+        font-family: "Poiret One", sans-serif;
+     
+        font-size: 2.5rem; /* Tamanho maior para destacar */
+        color: white; /* Cor da logo */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra para efeito */
+    }
+
+    .nav-list {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+
+    .nav-list li a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+    .nav-list li a:hover {
+        color: #ff6f61;
+    }
+
+    /* Menu Hambúrguer (para telas menores) */
+    .menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        z-index: 1001;
+        padding: 10px; /* Adiciona um padding ao ícone */
+    }
+
+    .menu-toggle .bar {
+        width: 25px;
+        height: 3px;
+        background: white;
+        margin: 4px 0;
+        transition: all 0.3s ease;
+    }
+
+    /* Responsividade */
+    @media screen and (max-width: 768px) {
+        .nav-list {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            width: 100%;
+            height: 100vh;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: right 0.3s ease-in-out;
+            z-index: 1000;
+        }
+
+        .nav-list.active {
+            right: 0;
+        }
+
+        .menu-toggle {
+            display: flex;
+        }
+
+        .menu-toggle.active .bar:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active .bar:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .nav-list li {
+            margin: 20px 0;
+        }
+
+        .nav-list li a {
+            font-size: 1.5rem;
+        }
+
+        .logo {
+            font-size: 1.7rem;
+        }
+
+        .menu-toggle {
+            margin-left: auto;
+        }
+    }
+     /* Estilos da Hero Section */
+     .hero {
+        background-image: url('img/slide4.png'); /* Substitua pelo caminho da sua imagem */
+        background-size: cover;
+        background-position: center;
+        height: 100vh; /* Altura total da tela */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        position: relative;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.0); /* Camada escura sobre a imagem */
+    }
+
+    .hero-content {
+        z-index: 2; /* Garante que o conteúdo fique acima da camada escura */
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8); /* Sombra para melhorar a legibilidade */
+    }
+
+    .hero p {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para melhorar a legibilidade */
+    }
+
+    .cta-button {
+        background: #ff6f61;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 15px;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: background 0.3s ease;
+        margin-top: 40px; /* Adiciona um espaço acima do botão */
+
+    }
+
+    .cta-button:hover {
+        background: #e65a50;
+    }
+
+    /* Responsividade */
+    @media screen and (max-width: 768px) {
+        .hero h1 {
+            font-size: 2.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .hero h1 {
+            font-size: 2rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+        }
+    }
+    /* Remove o sublinhado do link da extensão de cílios */
+.card a {
+text-decoration: none; /* Remove o sublinhado */
+color: inherit; /* Mantém a cor do texto do card */
+}
