@@ -152,21 +152,7 @@
         text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para melhorar a legibilidade */
     }
 
-    .cta-button {
-        background: #ff6f61;
-        color: white;
-        padding: 10px 20px;
-        border-radius: 15px;
-        text-decoration: none;
-        font-size: 1.1rem;
-        transition: background 0.3s ease;
-        margin-top: 40px; /* Adiciona um espaço acima do botão */
-
-    }
-
-    .cta-button:hover {
-        background: #e65a50;
-    }
+   
 
     /* Responsividade */
     @media screen and (max-width: 768px) {
@@ -192,4 +178,27 @@
 .card a {
 text-decoration: none; /* Remove o sublinhado */
 color: inherit; /* Mantém a cor do texto do card */
+}
+.btn-agendar-transparente {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: transparent;
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    border: 2px solid white;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    backdrop-filter: blur(5px);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.btn-agendar-transparente:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }

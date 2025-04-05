@@ -749,23 +749,3 @@ a {
     }
 }
 
-.agendar-btn {
-    background: #ff6f61;
-    color: white !important;
-    padding: 8px 20px;
-    border-radius: 20px;
-    margin-left: 15px;
-    transition: all 0.3s ease;
-}
-
-.agendar-btn:hover {
-    background: #e65a50;
-    transform: scale(1.05);
-}
-
-@media screen and (max-width: 768px) {
-    .agendar-btn {
-        margin: 15px 0;
-        display: inline-block;
-    }
-}

@@ -1,0 +1,45 @@
+Array
+(
+    [nome] => daniel
+    [whatsapp] => (43) 99675-0243
+    [servico] => Siriena
+    [data] => 22/04/2025
+    [hora] => 09:00
+    [observacoes] => 
+)
+Array
+(
+    [nome] => daniel etste
+    [whatsapp] => (43) 99675-0243
+    [servico] => Brasileiro Black
+    [data] => 15/04/2025
+    [hora] => 16:30
+    [observacoes] => 
+)
+Array
+(
+    [nome] => teste2
+    [whatsapp] => (43) 99675-0243
+    [servico] => Efeito Fox
+    [data] => 15/04/2025
+    [hora] => 15:30
+    [observacoes] => 
+)
+Array
+(
+    [nome] => teste5
+    [whatsapp] => (43) 99675-0243
+    [servico] => Efeito Molhado
+    [data] => 15/04/2025
+    [hora] => 16:30
+    [observacoes] => 
+)
+Array
+(
+    [nome] => ulti
+    [whatsapp] => (43) 99675-0243
+    [servico] => Volume Egipcio
+    [data] => 16/04/2025
+    [hora] => 15:00
+    [observacoes] => 
+)

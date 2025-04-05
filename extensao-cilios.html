@@ -129,51 +129,14 @@
             padding-left: 0;
         }
 
-        .botaoagendar {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            z-index: 15;
-            opacity: 0;
-            animation: subir 1s forwards;
-            animation-delay: 0.5s;
-        }
+        
 
         @keyframes subir {
             0% { transform: translate(-50%, -100%); opacity: 0; }
             100% { transform: translate(-50%, -50%); opacity: 1; }
         }
 
-        .btn-agendar {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: transparent;
-            color: white;
-            font-size: 1em;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 25px;
-            border: 2px solid white;
-            text-align: center;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s, border-color 0.3s;
-            white-space: nowrap;
-        }
-
-        .btn-agendar:hover {
-            background-color: rgba(255, 255, 255, 0.3);
-            transform: scale(1.05);
-            border-color: rgba(255, 255, 255, 0.6);
-        }
-
-        .manutencao {
-            background-color: transparent;
-            border: 2px solid white;
-        }
+        
 
         .imagens-cantos {
             display: flex;
@@ -359,10 +322,10 @@
         <div class="slide-text">
             <h1>Técnicas Gringas</h1>
             <p>Role a tela para saber mais</p><br>
-            <span class="arrow">&#8595;</span>
-        </div>
+        <!-- Botão de agendamento adicionado aqui -->
+        <a href="agendamento.html" class="btn-agendar-transparente">AGENDAR AGORA</a>
     </div>
-
+</div>
     <div class="content">
         <h2>Descubra a técnica perfeita para o seu olhar</h2>
         <picture>
