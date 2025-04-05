@@ -1,4 +1,10 @@
 <?php
+$mysql = new mysqli("localhost", "seu_usuario", "sua_senha", "nome_do_banco");
+
+// Verifica se houve erro na conexão
+if ($mysql->connect_error) {
+    die("Erro na conexão: " . $mysql->connect_error);
+}
 session_start();
 require('conexao.php');
 // Verifica login (simplificado - você deve melhorar isso!)
@@ -9,7 +15,7 @@ if (!isset($_SESSION['logado'])) {
 
 // Busca agendamentos
 $sql = "SELECT * FROM agendamentos ORDER BY data_agendamento DESC";
-$resultado = $conn->query($sql);
+$resultado = $conn->query($mysql);
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
