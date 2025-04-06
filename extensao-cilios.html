@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrossel de Vídeos em Tela Cheia</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <title>Cibelly Lash - Técnicas Gringas</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Poiret+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style2.css">
-<link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="style3.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Merienda:wght@300..900&family=Quicksand:wght@300..700&display=swap');
     </style>
@@ -31,23 +30,16 @@
             overflow-x: hidden;
         }
 
-        .swiper-container {
+        /* --- IMAGEM DE FUNDO FIXA (REMOVENDO O SWIPER) --- */
+        .hero-section {
             width: 100vw;
             height: 100vh;
             position: relative;
+            background: url('img/IMG_8189.jpg') no-repeat center center;
+            background-size: cover;
         }
 
-        .swiper-slide {
-            width: 100%;
-            height: 100%;
-        }
-
-        .swiper-slide video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
+        /* --- TEXTO E BOTÃO (MANTIDO IGUAL) --- */
         .slide-text {
             position: absolute;
             top: 70%;
@@ -73,11 +65,30 @@
             animation: pulse 2s infinite alternate;
         }
 
+        .btn-agendar-transparente {
+            display: inline-block;
+            padding: 10px 20px;
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-agendar-transparente:hover {
+            background: white;
+            color: #000;
+        }
+
         @keyframes pulse {
             0% { transform: translateY(0); opacity: 0.8; }
             100% { transform: translateY(5px); opacity: 1; }
         }
 
+        /* --- RESTANTE DO CSS (MANTIDO IGUAL) --- */
         .content {
             width: 100%;
             min-height: 100vh;
@@ -128,15 +139,6 @@
             list-style-type: none;
             padding-left: 0;
         }
-
-        
-
-        @keyframes subir {
-            0% { transform: translate(-50%, -100%); opacity: 0; }
-            100% { transform: translate(-50%, -50%); opacity: 1; }
-        }
-
-        
 
         .imagens-cantos {
             display: flex;
@@ -191,7 +193,6 @@
             gap: 20px;
         }
 
-      
         header {
             background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
@@ -279,6 +280,9 @@
                 display: flex;
             }
             
+            .slide-text h1 {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
@@ -287,7 +291,7 @@
         <nav>
             <a href="index.html" style="text-decoration: none;">
                 <div class="logo">Cibelly Lash</div>
-            </a>            <!-- Ícone do menu hambúrguer -->
+            </a>
             <div class="menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -301,28 +305,16 @@
         </nav>
     </header>
 
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <video autoplay muted loop playsinline>
-                </video>
-            </div>
-            <div class="swiper-slide">
-                <video autoplay muted loop playsinline>
-                    <source src="videos/WhatsApp Video 2025-04-05 at 19.23.40.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="swiper-slide">
-            
-            </div>
-        </div>
+    <!-- SEÇÃO HERO COM IMAGEM FIXA (SEM SWIPER) -->
+    <div class="hero-section">
         <div class="slide-text">
-            <h1>Técnicas Gringas</h1>
-            <p>Role a tela para saber mais</p><br>
-        <!-- Botão de agendamento adicionado aqui -->
-        <a href="agendamento.html" class="btn-agendar-transparente">AGENDAR AGORA</a>
+            <h1>Seu olhar, sua marca!</h1>
+            <a href="agendamento.html" class="btn-agendar-transparente">AGENDAR AGORA</a>
+
+        </div>
     </div>
-</div>
+
+    <!-- CONTEÚDO (MANTIDO IGUAL) -->
     <div class="content">
         <h2>Descubra a técnica perfeita para o seu olhar</h2>
         <picture>
@@ -352,21 +344,8 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        // Inicializa o Swiper
-        var swiper = new Swiper(".swiper-container", {
-            loop: true,
-            effect: "fade",
-            speed: 2000,
-            fadeEffect: { crossFade: true },
-            autoplay: { 
-                delay: 7000,
-                disableOnInteraction: false 
-            }
-        });
-
-        // Menu Hambúrguer
+        // Menu Hambúrguer (MANTIDO)
         const mobileMenu = document.getElementById('mobile-menu');
         const navList = document.getElementById('nav-list');
 
@@ -384,7 +363,7 @@
             });
         });
 
-        // Observador de imagens
+        // Observador de imagens (MANTIDO)
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -396,18 +375,6 @@
         const imagens = document.querySelectorAll('.img-canto');
         imagens.forEach(img => {
             observer.observe(img);
-        });
-
-        // Autoplay de vídeos
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelectorAll(".swiper-slide video").forEach(video => {
-                video.play().catch(error => {
-                    console.log("Autoplay bloqueado. Tentando novamente ao interagir.");
-                    document.addEventListener("click", () => {
-                        video.play();
-                    }, { once: true });
-                });
-            });
         });
     </script>
 </body>

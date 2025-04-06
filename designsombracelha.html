@@ -10,12 +10,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Poiret+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style2.css">
-<link rel="stylesheet" href="style3.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="style3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Poiret+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Poiret+One&display=swap" rel="stylesheet">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Merienda:wght@300..900&family=Quicksand:wght@300..700&display=swap');
@@ -50,6 +50,7 @@
             align-items: center;
             justify-content: center;
             background-color: #000;
+            position: relative;
         }
 
         .swiper-slide img {
@@ -69,6 +70,7 @@
             z-index: 10;
             font-weight: bold;
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+            width: 100%;
         }
 
         .slide-text h1 {
@@ -82,6 +84,26 @@
             font-size: 1.2em;
             opacity: 0.8;
             animation: pulse 2s infinite alternate;
+            margin-bottom: 20px;
+        }
+
+        .btn-agendar {
+            display: inline-block;
+            padding: 12px 30px;
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .btn-agendar:hover {
+            background: white;
+            color: #000;
         }
 
         @keyframes pulse {
@@ -174,8 +196,6 @@
             gap: 10px;
         }
 
-     
-
         header {
             background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
@@ -262,8 +282,20 @@
             .menu-toggle {
                 display: flex;
             }
+
+            .slide-text h1 {
+                font-size: 2em;
+            }
+
+            .slide-text p {
+                font-size: 1em;
+            }
+
+            .btn-agendar {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
         }
-        
     </style>
 </head>
 <body>
@@ -271,7 +303,7 @@
         <nav>
             <a href="index.html" style="text-decoration: none;">
                 <div class="logo">Cibelly Lash</div>
-            </a>            <!-- Ícone do menu hambúrguer -->
+            </a>
             <div class="menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -292,6 +324,7 @@
                 <div class="slide-text">
                     <h1>Design de Sobrancelhas</h1>
                     <p>Realce sua beleza natural</p>
+                    <a href="agendamento.html" class="btn-agendar">AGENDAR AGORA</a>
                 </div>
             </div>
             <div class="swiper-slide">
@@ -299,6 +332,7 @@
                 <div class="slide-text">
                     <h1>Precisão e Harmonia</h1>
                     <p>Resultados que encantam</p>
+                    <a href="agendamento.html" class="btn-agendar">AGENDAR AGORA</a>
                 </div>
             </div>
             <div class="swiper-slide">
@@ -306,20 +340,18 @@
                 <div class="slide-text">
                     <h1>Agende já!</h1>
                     <p>Transforme seu olhar</p>
+                    <a href="agendamentosombracelha.html" class="btn-agendar">AGENDAR AGORA</a>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="content">
-        <h2>O que é Design de Sobrancelhas?</h2>
         <p>
             O design de sobrancelhas é uma técnica que visa criar um formato personalizado para realçar a beleza natural do seu rosto. Com precisão e cuidado, garantimos um resultado harmonioso e elegante.
         </p>
-        <img src="img/sombracelha.png" alt="Design de Sobrancelhas">
+        <img src="img/Product Catalog Booklet (1).png" alt="Design de Sobrancelhas">
     </div>
-
-    
 
     <footer>
         <div class="footer-content">

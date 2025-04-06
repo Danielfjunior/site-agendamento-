@@ -6,6 +6,51 @@
     <title>Agendamento - Cibelly Lash</title>
     <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
     <style>
+        /* ADICIONE/SUBSTITUA ESTES ESTILOS NO SEU CSS */
+
+/* Estilo unificado para todos os campos do formulário */
+.form-control, 
+.custom-select select,
+#fullName,
+#whatsapp,
+#appointmentDate {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    background-color: white;
+    height: 50px;
+    font-family: 'Quicksand', sans-serif;
+    color: #333;
+}
+
+/* Estilo específico para o select (setinha) */
+.custom-select select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23ff69b4' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 16px;
+}
+
+/* Efeito de foco para todos os campos */
+.form-control:focus, 
+.custom-select select:focus,
+#fullName:focus,
+#whatsapp:focus,
+#appointmentDate:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.2);
+}
+
+/* Ajuste extra para o campo de WhatsApp */
+#whatsapp {
+    letter-spacing: 1px;
+}
         /* (Mantive todos os estilos anteriores) */
         :root {
             --primary: #ff69b4;
@@ -175,6 +220,7 @@
                 padding: 30px 20px;
             }
         }
+        
     </style>
 </head>
 <body>
