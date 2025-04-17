@@ -1,0 +1,94 @@
+2025-04-17 00:54:31 - Requisição recebida
+Método: POST
+Headers: Array
+(
+    [Host] => localhost:8000
+    [Connection] => keep-alive
+    [Content-Length] => 130
+    [sec-ch-ua-platform] => "Android"
+    [User-Agent] => Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Mobile Safari/537.36
+    [sec-ch-ua] => "Google Chrome";v="135", "Not-A.Brand";v="8", "Chromium";v="135"
+    [Content-Type] => application/json
+    [sec-ch-ua-mobile] => ?1
+    [Accept] => */*
+    [Origin] => http://localhost:8000
+    [Sec-Fetch-Site] => same-origin
+    [Sec-Fetch-Mode] => cors
+    [Sec-Fetch-Dest] => empty
+    [Referer] => http://localhost:8000/agendamentounha.html
+    [Accept-Encoding] => gzip, deflate, br, zstd
+    [Accept-Language] => pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,es;q=0.6
+    [Cookie] => PHPSESSID=e00a242b0a4222b25404696b4712273f
+)
+
+POST data: Array
+(
+)
+
+Input: {"nome":"daniel","whatsapp":"43996750243","servico":"Esmaltação em Gel (Pés)","data":"2025-04-16","hora":"09:00","tipo":"unha"}
+
+PDO Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tipo' in 'field list'
+Resposta: {"success":false,"message":"Erro no banco de dados: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tipo' in 'field list'","error_code":"42S22"}
+
+2025-04-17 00:56:07 - Requisição recebida
+Método: POST
+Headers: Array
+(
+    [Host] => localhost:8000
+    [Connection] => keep-alive
+    [Content-Length] => 133
+    [sec-ch-ua-platform] => "Android"
+    [User-Agent] => Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Mobile Safari/537.36
+    [sec-ch-ua] => "Google Chrome";v="135", "Not-A.Brand";v="8", "Chromium";v="135"
+    [Content-Type] => application/json
+    [sec-ch-ua-mobile] => ?1
+    [Accept] => */*
+    [Origin] => http://localhost:8000
+    [Sec-Fetch-Site] => same-origin
+    [Sec-Fetch-Mode] => cors
+    [Sec-Fetch-Dest] => empty
+    [Referer] => http://localhost:8000/agendamentounha.html
+    [Accept-Encoding] => gzip, deflate, br, zstd
+    [Accept-Language] => pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,es;q=0.6
+    [Cookie] => PHPSESSID=e00a242b0a4222b25404696b4712273f
+)
+
+POST data: Array
+(
+)
+
+Input: {"nome":"daniel","whatsapp":"43996750243","servico":"Alongamento em Fibra de Vidro","data":"2025-04-16","hora":"09:00","tipo":"unha"}
+
+Resposta: {"success":true,"message":"Agendamento salvo com sucesso!","id":"4"}
+
+2025-04-17 00:58:53 - Requisição recebida
+Método: POST
+Headers: Array
+(
+    [Host] => localhost:8000
+    [Connection] => keep-alive
+    [Content-Length] => 118
+    [sec-ch-ua-platform] => "Android"
+    [User-Agent] => Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Mobile Safari/537.36
+    [sec-ch-ua] => "Google Chrome";v="135", "Not-A.Brand";v="8", "Chromium";v="135"
+    [Content-Type] => application/json
+    [sec-ch-ua-mobile] => ?1
+    [Accept] => */*
+    [Origin] => http://localhost:8000
+    [Sec-Fetch-Site] => same-origin
+    [Sec-Fetch-Mode] => cors
+    [Sec-Fetch-Dest] => empty
+    [Referer] => http://localhost:8000/agendamento.html
+    [Accept-Encoding] => gzip, deflate, br, zstd
+    [Accept-Language] => pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,es;q=0.6
+    [Cookie] => PHPSESSID=e00a242b0a4222b25404696b4712273f
+)
+
+POST data: Array
+(
+)
+
+Input: {"nome":"daniel etste","whatsapp":"43996750243","servico":"Siriena","data":"2025-04-16","hora":"16:00","tipo":"cilio"}
+
+Resposta: {"success":true,"message":"Agendamento salvo com sucesso!","id":"5"}
+

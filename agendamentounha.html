@@ -3,61 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agendamento - Cibelly Lash</title>
+    <title>Agendamento de Unhas - Cibelly Lash</title>
     <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* ADICIONE/SUBSTITUA ESTES ESTILOS NO SEU CSS */
-
-/* Estilo unificado para todos os campos do formulário */
-.form-control, 
-.custom-select select,
-#fullName,
-#whatsapp,
-#appointmentDate {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: all 0.3s;
-    background-color: white;
-    height: 50px;
-    font-family: 'Quicksand', sans-serif;
-    color: #333;
-}
-
-/* Estilo específico para o select (setinha) */
-.custom-select select {
-    appearance: none;
-    -webkit-appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23ff69b4' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 15px center;
-    background-size: 16px;
-}
-
-/* Efeito de foco para todos os campos */
-.form-control:focus, 
-.custom-select select:focus,
-#fullName:focus,
-#whatsapp:focus,
-#appointmentDate:focus {
-    border-color: var(--primary);
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.2);
-}
-
-/* Ajuste extra para o campo de WhatsApp */
-#whatsapp {
-    letter-spacing: 1px;
-}
-        /* (Mantive todos os estilos anteriores) */
         :root {
             --primary: #ff69b4;
             --secondary: #ff8ac5;
             --dark: #333;
             --light: #fff;
             --gray: #f5f5f5;
+            --success: #4CAF50;
+            --error: #f44336;
         }
         
         * {
@@ -71,37 +29,66 @@
             background-color: var(--gray);
             color: var(--dark);
             line-height: 1.6;
+            background-image: url('https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-blend-mode: overlay;
+            background-color: rgba(255, 255, 255, 0.9);
         }
         
         .container {
-            max-width: 1000px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 40px 20px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         .header {
             text-align: center;
             margin-bottom: 40px;
+            position: relative;
         }
         
         .header h1 {
             color: var(--primary);
             font-size: 2.5rem;
             margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
         }
         
         .header p {
             color: var(--dark);
             font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            width: 100px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .booking-form {
             background: var(--light);
             border-radius: 15px;
             padding: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
             position: relative;
             overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .booking-form:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
         }
         
         .booking-form::before {
@@ -110,7 +97,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 10px;
+            height: 8px;
             background: linear-gradient(90deg, var(--primary), var(--secondary));
         }
         
@@ -124,48 +111,64 @@
             margin-bottom: 8px;
             font-weight: 600;
             color: var(--dark);
+            font-size: 0.95rem;
         }
         
-        .form-control {
+        .form-control, 
+        .custom-select select,
+        #fullName,
+        #whatsapp,
+        #appointmentDate {
             width: 100%;
-            padding: 15px;
+            padding: 15px 20px;
             border: 1px solid #ddd;
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 1rem;
             transition: all 0.3s;
-            appearance: none;
-            -webkit-appearance: none;
             background-color: white;
+            height: 50px;
+            font-family: 'Quicksand', sans-serif;
+            color: #555;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
         }
         
-        .form-control:focus {
+        .custom-select select {
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23ff69b4' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 16px;
+            cursor: pointer;
+        }
+        
+        .form-control:focus, 
+        .custom-select select:focus,
+        #fullName:focus,
+        #whatsapp:focus,
+        #appointmentDate:focus {
             border-color: var(--primary);
             outline: none;
             box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.2);
         }
         
-        .custom-select {
-            position: relative;
+        #whatsapp {
+            letter-spacing: 1px;
         }
         
-        .custom-select select {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
-            cursor: pointer;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23ff69b4' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 15px center;
-            background-size: 16px;
+        .input-icon {
+            position: absolute;
+            right: 15px;
+            top: 38px;
+            color: #aaa;
+            font-size: 1.1rem;
         }
         
         .btn-submit {
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: var(--light);
             border: none;
-            padding: 15px 30px;
+            padding: 16px 30px;
             font-size: 1.1rem;
             font-weight: 600;
             border-radius: 50px;
@@ -174,11 +177,35 @@
             transition: all 0.3s;
             text-transform: uppercase;
             letter-spacing: 1px;
+            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+            position: relative;
+            overflow: hidden;
         }
         
         .btn-submit:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255, 105, 180, 0.3);
+            box-shadow: 0 10px 25px rgba(255, 105, 180, 0.4);
+        }
+        
+        .btn-submit:active {
+            transform: translateY(1px);
+        }
+        
+        .btn-submit::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0));
+            transform: translateX(-100%);
+            transition: transform 0.3s;
+        }
+        
+        .btn-submit:hover::after {
+            transform: translateX(100%);
         }
         
         .calendar-container {
@@ -190,9 +217,45 @@
             margin-bottom: 25px;
         }
         
+        .time-slots {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .time-slot {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .time-slot:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        
+        .time-slot.selected {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .time-slot.unavailable {
+            background: #f5f5f5;
+            color: #aaa;
+            cursor: not-allowed;
+            text-decoration: line-through;
+        }
+        
         .flatpickr-calendar {
             border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border: none;
         }
         
         .flatpickr-day.selected {
@@ -200,330 +263,487 @@
             border-color: var(--primary);
         }
         
+        .flatpickr-day.today {
+            border-color: var(--primary);
+        }
+        
+        .flatpickr-day:hover {
+            background: var(--secondary);
+            border-color: var(--secondary);
+        }
+        
         .confirmation {
             display: none;
             text-align: center;
             padding: 40px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease-in-out;
         }
         
         .confirmation h2 {
             color: var(--primary);
             margin-bottom: 20px;
+            font-size: 2rem;
         }
         
         .confirmation p {
             margin-bottom: 30px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .confirmation-icon {
+            font-size: 4rem;
+            color: var(--success);
+            margin-bottom: 20px;
+            animation: bounce 1s;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+        
+        .error-message {
+            color: var(--error);
+            font-size: 0.9rem;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .form-group.error .form-control,
+        .form-group.error .custom-select select {
+            border-color: var(--error);
+        }
+        
+        .form-group.error .error-message {
+            display: block;
+        }
+        
+        .form-group.success .form-control,
+        .form-group.success .custom-select select {
+            border-color: var(--success);
+        }
+        
+        .loader {
+            display: none;
+            width: 30px;
+            height: 30px;
+            border: 3px solid rgba(255, 105, 180, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--primary);
+            animation: spin 1s ease-in-out infinite;
+            margin: 20px auto;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .whatsapp-link {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+        
+        .whatsapp-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            background: #20bd5a;
+        }
+        
+        .whatsapp-link i {
+            margin-right: 8px;
+        }
+        
+        .service-duration {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 5px;
         }
         
         @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
             .booking-form {
                 padding: 30px 20px;
             }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .time-slots {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
         
+        @media (max-width: 480px) {
+            .time-slots {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>Agende Seu Horário</h1>
-            <p>Preencha o formulário abaixo para reservar seu horário</p>
+            <img src="img/logo.png.png" alt="Cibelly Lash" class="logo">
+            <h1>Agendamento de Unhas</h1>
+            <p>Preencha o formulário abaixo para reservar seu horário para manicure</p>
         </div>
         
         <div class="booking-form" id="bookingForm">
-            <form id="appointmentForm" action="salvar_agendamento.php" method="POST">
+            <form id="appointmentForm">
                 <div class="form-group">
                     <label for="fullName">Nome Completo</label>
-                    <input type="text" id="fullName" name="nome" required>
-
+                    <input type="text" id="fullName" name="nome" required placeholder="Seu nome completo">
+                    <i class="fas fa-user input-icon"></i>
+                    <div class="error-message">Por favor, insira seu nome completo</div>
                 </div>
                 
                 <div class="form-group">
                     <label for="whatsapp">WhatsApp</label>
-                    <input type="tel" id="whatsapp" name="whatsapp" required>
+                    <input type="tel" id="whatsapp" name="whatsapp" required placeholder="(00) 00000-0000">
+                    <i class="fas fa-phone-alt input-icon"></i>
+                    <div class="error-message">Por favor, insira um WhatsApp válido</div>
                 </div>
                 
                 <div class="form-group">
-                    <label for="service">Serviços</label>
+                    <label for="service">Serviço de Unhas</label>
                     <div class="custom-select">
                         <select id="service" name="servico" class="form-control" required>
                             <option value="" disabled selected>Selecione um serviço</option>
-                            <option value="Esmalta em Gel nas Mãos">Esmalta em Gel nas Mãos</option>
-                            <option value="Esmalta em Gel nos Pés">Esmalta em Gel nos Pés</option>
-                            <option value="Blindagem">Blindagem</option>
-                            <option value="Alongamento em fibra">Alongamento em fibra</option>
+                            <option value="Esmaltação em Gel (Mãos)">Esmaltação em Gel (Mãos) - R$ 60,00</option>
+                            <option value="Esmaltação em Gel (Pés)">Esmaltação em Gel (Pés) - R$ 70,00</option>
+                            <option value="Esmaltação em Gel (Mãos e Pés)">Esmaltação em Gel (Mãos e Pés) - R$ 130,00</option>
+                            <option value="Blindagem">Blindagem - R$ 70,00</option>
+                            <option value="Alongamento em Fibra de Vidro">Alongamento em Fibra - R$ 160,00</option>
+                            <option value="Manutenção de Fibra">Manutenção de Fibra - R$ 70,00</option>
                         </select>
                     </div>
+                    <div class="error-message">Por favor, selecione um serviço</div>
                 </div>
                 
                 <div class="form-group calendar-container">
-                    <label for="appointmentDate">Selecione a Data</label>
-                    <input type="date" id="appointmentDate" name="data" class="form-control" required>
+                    <label for="appointmentDate">Data do Agendamento</label>
+                    <input type="text" id="appointmentDate" name="data" class="form-control" placeholder="Selecione uma data" required>
+                    <div class="error-message">Por favor, selecione uma data</div>
                 </div>
                 
                 <div class="form-group time-container" id="timeContainer">
-                    <label for="appointmentTime">Selecione o Horário</label>
-                    <select id="appointmentTime" name="hora" class="form-control" required>
-                        <option value="" disabled selected>Selecione um horário</option>
-                        <option value="09:00">09:00</option>
-                        <option value="10:00">10:00</option>
-                        <option value="11:00">11:00</option>
-                        <option value="12:00">12:00</option>
-                        <option value="13:00">13:00</option>
-                        <option value="14:00">14:00</option>
-                        <option value="15:00">15:00</option>
-                        <option value="16:00">16:00</option>
-                        <option value="17:00">17:00</option>
-                    </select>
+                    <label>Horários Disponíveis</label>
+                    <div class="time-slots" id="timeSlots">
+                        <!-- Horários serão preenchidos via JavaScript -->
+                    </div>
+                    <div class="error-message">Por favor, selecione um horário</div>
                 </div>
                 
-               
+                <input type="hidden" id="selectedTime" name="hora" value="">
                 
-                <button type="submit" class="btn-submit">Confirmar Agendamento</button>
+                <button type="submit" class="btn-submit" id="submitBtn">
+                    <span id="submitText">Confirmar Agendamento</span>
+                    <div class="loader" id="formLoader"></div>
+                </button>
             </form>
         </div>
         
-        <script>
-            document.getElementById('appointmentForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Coleta todos os dados do formulário
-                const formData = new FormData(this);
-                
-                // DEBUG: Mostra os dados que serão enviados
-                console.log("Dados do formulário:");
-                for (let [key, value] of formData.entries()) {
-                    console.log(key, value);
-                }
-                
-                // Envia via Fetch API
-                fetch('salvar_agendamento.php', {
-                    method: 'POST',
-                    body: formData // Envia como FormData, não como JSON
-                })
-                .then(response => {
-                    if (!response.ok) throw new Error('Erro na rede');
-                    return response.json();
-                })
-                .then(data => {
-                    if (data.success) {
-                        alert('Agendamento realizado com sucesso!');
-                        window.location.href = 'admin.php';
-                    } else {
-                        alert('Erro: ' + data.message);
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert('Erro ao enviar agendamento');
-                });
-            });
-        </script>
-        
         <div class="confirmation" id="confirmation">
+            <div class="confirmation-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
             <h2>Agendamento Confirmado!</h2>
-            <p>Seu horário foi reservado com sucesso. Em breve você receberá uma confirmação pelo WhatsApp.</p>
-            <a href="index.html" class="btn-submit" style="max-width: 300px; margin: 0 auto;">Voltar à Página Inicial</a>
+            <p>Seu horário foi reservado com sucesso. Em breve você receberá uma confirmação pelo WhatsApp com todos os detalhes.</p>
+            <p id="appointmentDetails"></p>
+            <a href="https://wa.me/5543999326237?text=Olá,%20gostaria%20de%20confirmar%20meu%20agendamento" class="whatsapp-link" id="whatsappLink" target="_blank">
+                <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+            </a>
+            <br>
+            <a href="index.html" class="btn-submit" style="max-width: 300px; margin: 20px auto 0; display: inline-block;">Voltar à Página Inicial</a>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        // Variável para armazenar horários já agendados (simulação)
-        const agendamentos = {
-            // Exemplo: '15/10/2023': ['09:00', '10:30']
-        };
-
-        // Configuração do calendário apenas para data
-        const datePicker = flatpickr("#appointmentDate", {
-            dateFormat: "d/m/Y",
-            minDate: "today",
-            maxDate: new Date().fp_incr(30), // 30 dias a partir de hoje
-            locale: "pt",
-            disable: [
-                function(date) {
-                    // Desabilita domingos
-                    return (date.getDay() === 0);
-                }
-            ],
-            onChange: function(selectedDates, dateStr, instance) {
-                // Quando uma data é selecionada, mostra o seletor de horários
-                document.getElementById('timeContainer').style.display = 'block';
+        document.addEventListener('DOMContentLoaded', function() {
+            // Elementos do DOM
+            const form = document.getElementById('appointmentForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const submitText = document.getElementById('submitText');
+            const formLoader = document.getElementById('formLoader');
+            const confirmationDiv = document.getElementById('confirmation');
+            const bookingFormDiv = document.getElementById('bookingForm');
+            const whatsappInput = document.getElementById('whatsapp');
+        
+            // Máscara para WhatsApp
+            whatsappInput.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length > 11) value = value.substring(0, 11);
                 
-                // Preenche os horários disponíveis para a data selecionada
-                generateTimeSlots(selectedDates[0]);
-            }
-        });
-
-        // Função para gerar os horários disponíveis com todas as regras
-        function generateTimeSlots(selectedDate) {
-            const timeSelect = document.getElementById('appointmentTime');
-            timeSelect.innerHTML = '<option value="" disabled selected>Selecione um horário</option>';
-            
-            // Verifica se é sábado (6) ou dia de semana (1-5)
-            const isSabado = selectedDate.getDay() === 6;
-            
-            // Define os horários de trabalho
-            let startHour, endHour;
-            
-            if (isSabado) {
-                // Sábado: 09:00 até 15:30
-                startHour = 9;
-                endHour = 15;
-                const lastTimeSabado = '15:30'; // Último horário para sábado
-            } else {
-                // Dias úteis: 09:00 até 19:30
-                startHour = 9;
-                endHour = 19;
-                const lastTimeDiaUtil = '19:30'; // Último horário para dias úteis
-            }
-            
-            const interval = 30; // Intervalo de 30 minutos
-            const bookedTimes = agendamentos[datePicker.input.value] || [];
-            
-            // Gera os horários
-            for (let hour = startHour; hour <= endHour; hour++) {
-                for (let minute = 0; minute < 60; minute += interval) {
-                    // Para sábado, não permitir horários após 15:30
-                    if (isSabado && hour === 15 && minute > 0) {
-                        break;
-                    }
-                    
-                    // Para dias úteis, não permitir horários após 19:30
-                    if (!isSabado && hour === 19 && minute > 30) {
-                        break;
-                    }
-                    
-                    const timeString = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`;
-                    
-                    // Verifica se o horário já está agendado
-                    if (!bookedTimes.includes(timeString)) {
-                        const option = document.createElement('option');
-                        option.value = timeString;
-                        option.textContent = timeString;
-                        timeSelect.appendChild(option);
+                if (value.length > 0) {
+                    value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
+                    if (value.length > 10) {
+                        value = value.replace(/(\d{5})(\d)/, '$1-$2');
                     }
                 }
-            }
-            
-            // Adiciona o último horário permitido manualmente
-            if (!isSabado) {
-                const lastOption = document.createElement('option');
-                lastOption.value = '19:30';
-                lastOption.textContent = '19:30';
                 
-                // Verifica se o último horário não está agendado
-                if (!bookedTimes.includes('19:30')) {
-                    timeSelect.appendChild(lastOption);
-                }
-            } else {
-                const lastOptionSabado = document.createElement('option');
-                lastOptionSabado.value = '15:30';
-                lastOptionSabado.textContent = '15:30';
-                
-                // Verifica se o último horário não está agendado
-                if (!bookedTimes.includes('15:30')) {
-                    timeSelect.appendChild(lastOptionSabado);
-                }
-            }
-        }
-
-        // Máscara para WhatsApp
-        document.getElementById('whatsapp').addEventListener('input', function(e) {
-            var value = e.target.value.replace(/\D/g, '');
-            if (value.length > 11) value = value.substring(0, 11);
-            
-            if (value.length > 0) {
-                value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
-                if (value.length > 10) {
-                    value = value.replace(/(\d{5})(\d)/, '$1-$2');
-                }
-            }
-            
-            e.target.value = value;
-        });
-
-        // Envio do formulário
-        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Validação
-            if (!document.getElementById('service').value) {
-                alert('Por favor, selecione um serviço');
-                return;
-            }
-            
-            if (!document.getElementById('appointmentDate').value) {
-                alert('Por favor, selecione uma data');
-                return;
-            }
-            
-            if (!document.getElementById('appointmentTime').value) {
-                alert('Por favor, selecione um horário');
-                return;
-            }
-            
-            // Combina data e hora
-            const selectedDate = datePicker.selectedDates[0];
-            const selectedTime = document.getElementById('appointmentTime').value;
-            const fullDate = `${document.getElementById('appointmentDate').value} ${selectedTime}`;
-            
-            // Simulação: Adiciona o horário aos agendamentos
-            const dateKey = datePicker.input.value;
-            if (!agendamentos[dateKey]) {
-                agendamentos[dateKey] = [];
-            }
-            agendamentos[dateKey].push(selectedTime);
-            
-            // Simulação de envio
-            setTimeout(function() {
-                document.getElementById('bookingForm').style.display = 'none';
-                document.getElementById('confirmation').style.display = 'block';
-                
-                console.log('Agendamento realizado:', {
-                    nome: document.getElementById('fullName').value,
-                    whatsapp: document.getElementById('whatsapp').value,
-                    servico: document.getElementById('service').value,
-                    data: fullDate,
-                    observacoes: document.getElementById('observations').value
-                });
-            }, 1000);
-        });
-        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Combina data e hora
-            const data = document.getElementById('appointmentDate').value;
-            const hora = document.getElementById('appointmentTime').value;
-            
-            if (!data || !hora) {
-                alert('Selecione data e horário');
-                return;
-            }
-            
-            // Cria FormData e adiciona campos manualmente para garantir os nomes
-            const formData = new FormData();
-            formData.append('nome', document.getElementById('fullName').value);
-            formData.append('whatsapp', document.getElementById('whatsapp').value);
-            formData.append('servico', document.getElementById('service').value);
-            formData.append('data', data);
-            formData.append('hora', hora);
-            formData.append('observacoes', document.getElementById('observations').value);
-            
-            fetch('salvar_agendamento.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    alert('Agendamento realizado!');
-                    window.location.href = 'admin.php';
-                } else {
-                    alert('Erro: ' + data.message);
+                e.target.value = value;
+            });
+        
+            // Configuração do calendário
+            const appointmentDate = flatpickr("#appointmentDate", {
+                locale: "pt",
+                minDate: "today",
+                maxDate: new Date().fp_incr(30), // 30 dias no futuro
+                disable: [
+                    function(date) {
+                        // Desabilita domingos e segundas
+                        return (date.getDay() === 0 || date.getDay() === 1);
+                    }
+                ],
+                onChange: function(selectedDates, dateStr, instance) {
+                    document.getElementById('timeContainer').style.display = 'block';
+                    document.querySelector('#timeContainer .error-message').style.display = 'none';
+                    generateTimeSlots(dateStr);
                 }
             });
+        
+            // Gera horários disponíveis
+            function generateTimeSlots(date) {
+                const timeSlotsContainer = document.getElementById('timeSlots');
+                timeSlotsContainer.innerHTML = '';
+                
+                // Horários de trabalho (9h às 17h)
+                const workHours = ['09:00', '10:30', '11:30', '12:30', '13:30', '14:30', '15:30', '16:30', '17:30', '18:30'];
+                const unavailableSlots = ['', '']; // Exemplo de horários já ocupados
+                
+                workHours.forEach(time => {
+                    const slot = document.createElement('div');
+                    slot.className = 'time-slot';
+                    if (unavailableSlots.includes(time)) {
+                        slot.classList.add('unavailable');
+                        slot.textContent = time;
+                    } else {
+                        slot.textContent = time;
+                        slot.addEventListener('click', function() {
+                            document.querySelectorAll('.time-slot.selected').forEach(el => {
+                                el.classList.remove('selected');
+                            });
+                            this.classList.add('selected');
+                            document.getElementById('selectedTime').value = time;
+                            document.querySelector('#timeContainer .error-message').style.display = 'none';
+                        });
+                    }
+                    
+                    timeSlotsContainer.appendChild(slot);
+                });
+            }
+        
+            // Função para enviar agendamento
+            async function enviarAgendamento(formData) {
+                try {
+                    const response = await fetch('http://localhost:8000/admin/salvar_agendamento.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(formData)
+                    });
+        
+                    // Verifica primeiro se a resposta foi recebida
+                    if (!response) {
+                        throw new Error('Sem resposta do servidor');
+                    }
+        
+                    // Verifica o status da resposta
+                    if (!response.ok) {
+                        const errorText = await response.text();
+                        console.error('Erro no servidor:', errorText);
+                        
+                        // Tenta extrair mensagem de erro se for JSON
+                        try {
+                            const errorJson = JSON.parse(errorText);
+                            throw new Error(errorJson.message || `Erro ${response.status}`);
+                        } catch {
+                            throw new Error(`Erro ${response.status}: ${errorText || 'Erro no servidor'}`);
+                        }
+                    }
+        
+                    // Só tenta parsear como JSON se a resposta for OK
+                    const result = await response.json();
+                    
+                    if (!result.success) {
+                        throw new Error(result.message || 'Erro ao processar agendamento');
+                    }
+                    
+                    return result;
+                    
+                } catch (error) {
+                    console.error('Erro na requisição:', error);
+                    throw error; // Rejeita a promise para ser tratada no chamador
+                }
+            }
+        
+            // Validação do formulário
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Validação
+                let isValid = true;
+                const fields = [
+                    { id: 'fullName', message: 'Por favor, insira seu nome completo' },
+                    { id: 'whatsapp', message: 'Por favor, insira um WhatsApp válido', 
+                      validate: val => val.replace(/\D/g, '').length >= 11 },
+                    { id: 'service', message: 'Por favor, selecione um serviço' },
+                    { id: 'appointmentDate', message: 'Por favor, selecione uma data' },
+                    { id: 'selectedTime', message: 'Por favor, selecione um horário' }
+                ];
+                
+                fields.forEach(field => {
+                    const element = document.getElementById(field.id);
+                    const formGroup = element.closest('.form-group') || 
+                                      document.querySelector(`select[name="${field.id}"]`)?.closest('.form-group');
+                    
+                    if (!formGroup) return;
+                    
+                    const errorMessage = formGroup.querySelector('.error-message');
+                    let value = element.value;
+                    
+                    if (element.tagName === 'SELECT' && value === '') {
+                        formGroup.classList.add('error');
+                        errorMessage.textContent = field.message;
+                        errorMessage.style.display = 'block';
+                        isValid = false;
+                        return;
+                    }
+                    
+                    if (field.validate && !field.validate(value)) {
+                        formGroup.classList.add('error');
+                        errorMessage.textContent = field.message;
+                        errorMessage.style.display = 'block';
+                        isValid = false;
+                        return;
+                    }
+                    
+                    if (!value || value.trim() === '') {
+                        formGroup.classList.add('error');
+                        errorMessage.textContent = field.message;
+                        errorMessage.style.display = 'block';
+                        isValid = false;
+                        return;
+                    }
+                    
+                    formGroup.classList.remove('error');
+                    formGroup.classList.add('success');
+                    errorMessage.style.display = 'none';
+                });
+                
+                if (!isValid) return;
+                
+                // Mostra loader
+                submitText.style.display = 'none';
+                formLoader.style.display = 'block';
+                submitBtn.disabled = true;
+                
+                try {
+                    // Formata os dados
+                    const formData = {
+                        nome: document.getElementById('fullName').value.trim(),
+                        whatsapp: document.getElementById('whatsapp').value.replace(/\D/g, ''),
+                        servico: document.getElementById('service').value,
+                        data: document.getElementById('appointmentDate').value,
+                        hora: document.getElementById('selectedTime').value,
+                        tipo: window.location.pathname.includes('unha') ? 'unha' : 
+                              window.location.pathname.includes('sombracelha') ? 'sobrancelha' : 'cilio'
+                    };
+        
+                    const resultado = await enviarAgendamento(formData);
+                    showConfirmation(formData);
+                    
+                    // Envia mensagem automática pelo WhatsApp
+                    const whatsappMsg = `Olá ${formData.nome}, seu agendamento para ${formData.servico} foi confirmado para ${formData.data} às ${formData.hora}.`;
+                    
+                    
+                } catch (error) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Erro no Agendamento',
+                        text: error.message,
+                        confirmButtonColor: '#ff69b4'
+                    });
+                } finally {
+                    submitText.style.display = 'block';
+                    formLoader.style.display = 'none';
+                    submitBtn.disabled = false;
+                }
+            });
+        
+            // Mostra confirmação
+            function showConfirmation(data) {
+                bookingFormDiv.style.display = 'none';
+                
+                const details = document.getElementById('appointmentDetails');
+                const whatsappLink = document.getElementById('whatsappLink');
+                
+                // Formata a data para exibição
+                const dateObj = new Date(data.data);
+                const formattedDate = dateObj.toLocaleDateString('pt-BR', { 
+                    weekday: 'long', 
+                    day: 'numeric', 
+                    month: 'long',
+                    year: 'numeric'
+                });
+                
+                // Atualiza detalhes do agendamento
+                details.innerHTML = `
+                    <strong>${data.nome}</strong>, seu agendamento para <strong>${data.servico}</strong>
+                    foi marcado para <strong>${formattedDate}</strong> às <strong>${data.hora}</strong>.
+                `;
+                
+                // Atualiza link do WhatsApp
+                const whatsappMessage = `Olá Cibelly, gostaria de confirmar meu agendamento para ${data.servico} no dia ${formattedDate} às ${data.hora}.`;
+                whatsappLink.href = `https://wa.me/5543999326237?text=${encodeURIComponent(whatsappMessage)}`;
+                
+                confirmationDiv.style.display = 'block';
+                confirmationDiv.scrollIntoView({ behavior: 'smooth' });
+            }
+        
+            // Validação em tempo real
+            document.querySelectorAll('#fullName, #whatsapp').forEach(input => {
+                input.addEventListener('input', function() {
+                    const formGroup = this.closest('.form-group');
+                    if (this.value.trim() !== '') {
+                        formGroup.classList.remove('error');
+                        formGroup.querySelector('.error-message').style.display = 'none';
+                    }
+                });
+            });
+            
+            document.getElementById('service').addEventListener('change', function() {
+                const formGroup = this.closest('.form-group');
+                if (this.value !== '') {
+                    formGroup.classList.remove('error');
+                    formGroup.querySelector('.error-message').style.display = 'none';
+                }
+            });
+            
+            // Inicialização: esconder o seletor de horários inicialmente
+            document.getElementById('timeContainer').style.display = 'none';
         });
     </script>
 </body>
